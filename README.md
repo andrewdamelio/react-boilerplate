@@ -5,6 +5,8 @@
 
 Basic React.js project boilerplate bundled JSX, React Router, Ramda, Semantic-UI, Skeleton, and Browserify.
 
+### <a href="http://andrewdamel.io/dev/Reactjs-boilerplate/#/">Demo</a>
+
 ### Usage
 
 - `git clone https://github.com/andrewdamelio/react-boilerplate.git`
