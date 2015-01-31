@@ -1,0 +1,56 @@
+body {
+  background: whitesmoke;
+  padding-top:50px;
+  width:50%;
+  margin: auto;
+}
+
+.container, .image, .steps {
+  text-align: center;
+  margin: auto;
+}
+
+ul {
+  list-style: none;
+}
+
+.ui.steps, .logo, {
+  padding-top: 25px;
+}
+
+.ui.image.label {
+  font-size: 1.5rem;
+}
+
+.long.arrow.left.icon {
+  font-size: 3rem;
+}
+
+.title-text {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 2.5rem;
+}
+
+.jsx-label {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    width: 200px;
+    height: 200px;
+  }
+
+.Aligner {
+ display: -webkit-flexbox;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  text-align: center;
+  height:300px;
+  width: 200px;
+  margin: auto;
+}
+
