@@ -7,6 +7,7 @@ var { RouteHandler } = Router;
 var Main = require('./routes/Main');
 var Yo = require('./routes/Yo');
 
+React.initializeTouchEvents(true);
 
 var Container = React.createClass({
   render: function() {
