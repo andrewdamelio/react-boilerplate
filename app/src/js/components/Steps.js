@@ -3,30 +3,7 @@
 var React = require('react');
 var R = require('../core/Ramda');
 
-var HowTo = React.createClass({
-  getInitialState: function () {
-    return {
-      steps: [{
-        key: 0,
-        active: true,
-        icon: 'github icon',
-        title: 'Step 1',
-        description: 'git clone'
-      }, {
-        key: 1,
-        active: false,
-        icon: 'wizard icon',
-        title: 'Step 2',
-        description: 'npm install'
-      }, {
-        key: 2,
-        active: false,
-        icon: 'checkered flag icon',
-        title: 'Step 3',
-        description: 'gulp serve'
-      }]
-    };
-  },
+var Steps = React.createClass({
   toggleStep: function(e) {
     var updateActiveState = function(step) {
       if (R.propEq('key', e.key, step)) {
@@ -35,7 +12,7 @@ var HowTo = React.createClass({
       return step;
     };
     this.setState({
-      steps: R.map(updateActiveState, this.state.steps)
+      steps: R.map(updateActiveState, this.props.steps)
     });
   },
   createStep: function (step) {
@@ -54,10 +31,10 @@ var HowTo = React.createClass({
   render: function() {
     return (
       <div className="ui steps">
-        {R.map(this.createStep, this.state.steps)}
+        {R.map(this.createStep, this.props.steps)}
       </div>
     );
   }
 });
 
-module.exports = HowTo;
+module.exports = Steps;
