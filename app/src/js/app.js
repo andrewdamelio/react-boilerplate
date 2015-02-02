@@ -2,8 +2,7 @@
 
 var React = require('react');
 var Router = require('react-router');
-var { Route } = Router;
-var { RouteHandler } = Router;
+var { Route, RouteHandler } = Router;
 var Main = require('./routes/Main');
 var Yo = require('./routes/Yo');
 
