@@ -4,6 +4,7 @@ var React = require('react');
 var Router = require('react-router');
 var { Link } = Router;
 var Label = require('../components/Label');
+var TweenMax = require('../core/TweenMax');
 
 var IMAGE_PATH = 'dist/images/';
 
@@ -27,12 +28,18 @@ var Yo = React.createClass({
       githubImage: newImage
     });
   },
+   componentDidMount: function () {
+    var intro = this.refs.intro.getDOMNode();
+
+    var t = new TimelineMax({repeat:-1, yoyo:true});
+    t.to(intro, 0.5, {y:'-=100'});
+  },
   render: function() {
     var name = this.getParams().name;
     return (
       <div className="container">
         <div className="Aligner">
-          <h2>ᕙ༼ຈل͜ຈ༽ᕗ {name}</h2>
+          <h2 ref="intro">ᕙ༼ຈل͜ຈ༽ᕗ {name}</h2>
         </div>
         <div className="jsx-label">
           <Label user={this.state.githubUser}
