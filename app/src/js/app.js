@@ -14,31 +14,31 @@ var IMAGE_PATH = 'dist/images/';
 React.initializeTouchEvents(true);
 
 var Container = React.createClass({
-    getInitialState: function () {
-      var data = Immutable.OrderedMap();
-      data = data.set('steps', Immutable.List.of({
-          key: 0,
-          active: true,
-          icon: 'github icon',
-          title: 'Step 1',
-          description: 'git clone'
-        }, {
-          key: 1,
-          active: false,
-          icon: 'wizard icon',
-          title: 'Step 2',
-          description: 'npm install'
-        }, {
-          key: 2,
-          active: false,
-          icon: 'checkered flag icon',
-          title: 'Step 3',
-          description: 'gulp serve'
-        }).toArray());
-      data = data.set('logo', IMAGE_PATH + 'reactjs.png');
-      data = data.set('githubUser', '@andrewdamelio');
-      data = data.set('githubLink', 'https://github.com/andrewdamelio/react-boilerplate');
-      data = data.set('githubImage', 'dist/images/avatar.jpg');
+  getInitialState: function () {
+    var data = Immutable.OrderedMap();
+    data = data.set('steps', Immutable.List.of({
+        key: 0,
+        active: true,
+        icon: 'github icon',
+        title: 'Step 1',
+        description: 'git clone'
+      }, {
+        key: 1,
+        active: false,
+        icon: 'wizard icon',
+        title: 'Step 2',
+        description: 'npm install'
+      }, {
+        key: 2,
+        active: false,
+        icon: 'checkered flag icon',
+        title: 'Step 3',
+        description: 'gulp serve'
+      }).toArray());
+    data = data.set('logo', IMAGE_PATH + 'reactjs.png');
+    data = data.set('githubUser', '@andrewdamelio');
+    data = data.set('githubLink', 'https://github.com/andrewdamelio/react-boilerplate');
+    data = data.set('githubImage', 'dist/images/avatar.jpg');
     return {
       data : data
     };
