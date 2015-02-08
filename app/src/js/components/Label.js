@@ -1,7 +1,6 @@
 'use strict';
 
 var React = require('react');
-var TweenMax = require('../core/TweenMax');
 
 var Label = React.createClass({
   handleImageChange: function() {

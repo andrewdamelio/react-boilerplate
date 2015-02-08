@@ -1,25 +1,21 @@
 'use strict';
 
 var React = require('react');
-var R = require('../core/Ramda');
+var R = require('Ramda');
+var Immutable = require('Immutable');
+var stepState = Immutable.OrderedMap();
 
 var Steps = React.createClass({
-  toggleStep: function(e) {
-    var updateActiveState = function(step) {
-      if (R.propEq('key', e.key, step)) {
-        step.active =! step.active;
-      }
-      return step;
-    };
-    this.setState({
-      steps: R.map(updateActiveState, this.props.steps)
-    });
+  toggleStep: function(step) {
+    this.props.updateActiveState(step);
   },
   createStep: function (step) {
-    var stepState = step.active ? 'step active' : 'step';
+    stepState = stepState.set('step', step.active ? 'step active' : 'step');
 
     return (
-      <a key={step.key} className={stepState} onClick={this.toggleStep.bind(this, step)}>
+      <a key={step.key}
+         className={stepState.get('step')}
+         onClick={this.toggleStep.bind(null, step)}>
         <i className={step.icon}></i>
         <div className="content">
           <div className="title">{step.title}</div>

@@ -1,15 +1,8 @@
 'use strict';
 
-var React = require('react/addons');
-var PureRenderMixin = require('react').addons.PureRenderMixin;
+var React = require('react');
 
 var Logo = React.createClass({
-  mixins: [PureRenderMixin],
-  getDefaultProps: function(){
-    return {
-      logo: 'dist/images/reactjs.png'
-    };
-  },
   zoomIn: function() {
     var element = this.refs.image.getDOMNode();
     var t = new TimelineMax();
