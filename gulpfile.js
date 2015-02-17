@@ -14,7 +14,7 @@ var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
-
+var babelify = require("babelify");
 gulp.task('sass', function() {
   gulp.src('./app/src/scss/**/*.scss')
     .pipe(sass())
@@ -22,9 +22,11 @@ gulp.task('sass', function() {
 });
 
 gulp.task('browserify', function() {
-  browserify('./app/src/js/app.js')
-    .transform('reactify', { 'es6': true })
+  browserify({ debug: true })
+    .transform(babelify)
+    .require('./app/src/js/app.js', { entry: true })
     .bundle()
+    .on("error", function (err) { console.log("Error: " + err.message); })
     .pipe(source('app.js'))
     .pipe(jshint())
     .pipe(gulp.dest('./app/dist'));
